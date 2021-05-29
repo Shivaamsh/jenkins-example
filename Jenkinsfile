@@ -22,7 +22,7 @@ pipeline {
           stage ('Deployment Stage') {
 
             steps {
-                withSonarQubeEnv(envOnly : 'sonar:sonar') {
+                withSonarQubeEnv(envOnly : 'sonarqube') {
                     sh 'sonar deploy'
                 }
             }
