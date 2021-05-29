@@ -19,5 +19,13 @@ pipeline {
                 }
             }
         }
+          stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'sonar:sonar') {
+                    sh 'sonar test'
+                }
+            }
+        }
     }
 }
