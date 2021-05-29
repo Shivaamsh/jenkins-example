@@ -22,7 +22,7 @@ pipeline {
           stage ('Deployment Stage') {
 
             steps {
-                withMaven(maven : 'sonar:sonar') {
+                withSonarQubeEnv('sonar:sonar') {
                     sh 'sonar deploy'
                 }
             }
