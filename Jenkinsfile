@@ -22,8 +22,8 @@ pipeline {
           stage ('Deployment Stage') {
 
             steps {
-                withSonarQubeEnv(envOnly : 'maven8593') {
-                    sh 'sonar deploy'
+                withSonarQubeEnv('sonarqube') {
+                    sh "${mvnHome}/bin/mvn sonar:sonar"
                 }
             }
         }
