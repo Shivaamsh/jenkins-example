@@ -19,11 +19,11 @@ pipeline {
                 }
             }
         }
-          stage ('Testing Stage') {
+          stage ('Deployment Stage') {
 
             steps {
                 withMaven(maven : 'sonar:sonar') {
-                    sh 'sonar test'
+                    sh 'sonar deploy'
                 }
             }
         }
