@@ -22,8 +22,8 @@ pipeline {
           stage ('Deployment Stage') {
 
             steps {
-                withSonarQubeEnv('sonarqube123') {
-                    sh 'sonarqube test'
+                withSonarQubeEnv('sonarqube') {
+                    sh 'sonarqube123 test'
                 }
             }
         }
